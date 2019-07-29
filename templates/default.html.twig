@@ -1,0 +1,9 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block page %}
+<main>
+{% if page.content %}
+{{ page.content }}
+{% endif %}
+</main>
+{% endblock %}
