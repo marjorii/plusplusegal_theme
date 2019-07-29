@@ -1,9 +1,49 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block page %}
-<main>
-{% if page.content %}
-{{ page.content }}
-{% endif %}
-</main>
+<div class="container">
+    <section class="left">
+        {% set nav = pages.find('/nav') %}
+        <h1>Plus Plus Égal</h1>
+        <ul>
+            {% for member in nav.header.member %}
+            {% for info in member.founders %}
+            <li><a href="{{ info.url }}" target="_blank">{{ info.name }}</a></li>
+            {% endfor %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for member in nav.header.member %}
+            {% for info in member.guests %}
+            <li>{% if info.url %}<a href="{{ info.url }}" target="_blank">{{ info.name }}</a>{% else %}<a>{{ info.name }}</a>{% endif %}</li>
+            {% endfor %}
+            {% endfor %}
+        </ul>
+        {{ nav.content }}
+        <div id="logo">
+            <img src="{{ url('theme://images/++=.png') }}"/>
+            <p>Plus Plus Égal 2019</p>
+        </div>
+    </section>
+    <section class="right">
+        <div id="buttons">
+            <a href="#"></a>&nbsp;&nbsp;<a href="#">FR</a>&nbsp;<a href="#">EN</a>
+        </div>
+        {% block main %}
+        <main>
+            {{ page.content }}
+        </main>
+        {% endblock %}
+        <div class="menu-bar">
+                <a href="projects.html">Projets</a>
+                <a href="about.html">À propos</a>
+                <a href="links.html">Liens</a>
+                <a href="#">Contact</a>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{% do assets.addJs('theme://js/script.js') %}
 {% endblock %}

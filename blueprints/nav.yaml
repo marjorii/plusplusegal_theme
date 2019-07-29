@@ -1,0 +1,39 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.member:
+              type: list
+              style: vertical
+              label: Membres
+              fields:
+                .founders:
+                  type: list
+                  style: vertical
+                  label: Fondatrices
+                  fields:
+                    .name:
+                      type: text
+                      style: vertical
+                      label: Nom
+                    .url:
+                      type: text
+                      style: vertical
+                      label: URL
+                .guests:
+                  type: list
+                  style: vertical
+                  label: Invités
+                  fields:
+                    .name:
+                      type: text
+                      style: vertical
+                      label: Nom
+                    .url:
+                      type: text
+                      style: vertical
+                      label: URL

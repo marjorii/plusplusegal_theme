@@ -1,0 +1,49 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.projects:
+              type: list
+              style: vertical
+              label: Projets
+              fields:
+                .commission:
+                  type: list
+                  style: vertical
+                  label: Commande
+                  fields:
+                    .title:
+                      type: text
+                      style: vertical
+                      label: Titre
+                    .images:
+                      type: file
+                      label: Images
+                .research:
+                  type: list
+                  style: vertical
+                  label: Recherche
+                  fields:
+                    .title:
+                      type: text
+                      style: vertical
+                      label: Titre
+                    .images:
+                      type: file
+                      label: Images
+                .archives:
+                  type: list
+                  style: vertical
+                  label: Archives
+                  fields:
+                    .title:
+                      type: text
+                      style: vertical
+                      label: Titre
+                    .images:
+                      type: file
+                      label: Images

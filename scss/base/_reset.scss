@@ -2,7 +2,8 @@
 
 :root {
     font-family: $font, monospace;
-    font-size: 1.25em;
+    font-size: 1em;
+    line-height: 1.5;
     color: $text-color;
 
     @media (max-width: 1024px), (max-height: 800px) {
