@@ -8,8 +8,7 @@ function resizeBar() {
     var isPortraitTablet = false;
     bar.style.cssText = 'width: ' + finalWidth + 'px';
     // mail.style.cssText = 'width: ' + finalWidth + 'px';
-
-    if (window.location.pathname == '/home/marjorie/dev/++=/project.html' && portraitTablet) {
+    if (window.location.pathname.includes('/projects/project.html') && portraitTablet) {
         isPortraitTablet = true;
         currentWidth = document.querySelector('#grid-container > div:last-of-type').offsetWidth;
         bar.style.cssText = 'width: ' + currentWidth + 'px';
@@ -30,3 +29,13 @@ function resizeBar() {
 }
 resizeBar();
 window.addEventListener('resize', resizeBar);
+
+
+// left becomes top menu (portrait phones)
+var left = document.querySelector('section.left');
+var arrow = document.querySelector('div#buttons a:first-of-type');
+arrow.addEventListener('click', function(event) {
+    arrow.classList.toggle('rotate');
+    left.classList.toggle('flex');
+});
+console.log(arrow);
