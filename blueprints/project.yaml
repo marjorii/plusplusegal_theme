@@ -1,0 +1,17 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.link:
+              type: list
+              style: vertical
+              label: Lien
+              fields:
+                .url:
+                  type: texte
+                  style: vertical
+                  label: URL
