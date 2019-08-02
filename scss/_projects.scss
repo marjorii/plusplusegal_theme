@@ -11,12 +11,11 @@
             grid-template-columns: repeat(auto-fit, minmax(12vh, 1fr));
             grid-column-gap: 3vh;
             grid-row-gap: 3vh;
-            direction: ltr;
             align-items: flex-start;
             padding-bottom: 6vh;
             &:last-of-type {
                 pointer-events: none;
-                &:last-child {
+                & > :last-child {
                     padding-bottom: 75px;
                 }
             }
@@ -25,10 +24,35 @@
                 width: 100%;
                 }
                 h2 {
+                    padding-top: 15px;
                     font-size: 0.75rem;
                     font-weight: normal;
+                    line-height: 1.25;
+                    text-align: left;
                 }
             }
         }
     }
+    @media (max-width: 1024px) {
+        section.right h1 {
+            font-size: 0.9rem;
+        }
+    }
+    @media (min-width: 1024px) and (orientation: portrait) {
+        section.right h1 {
+            font-size: 1.5rem !important;
+        }
+    }
+    @media (max-width: 600px) and (orientation: portrait) {
+        #grid-container {
+            justify-content: center;
+        }
+    }
+    @media (max-height: 600px) and (orientation: landscape) {
+        #grid-container {
+            direction: ltr;
+            grid-template-columns: repeat(auto-fit, minmax(16vh, 1fr));
+        }
+}
+
 }

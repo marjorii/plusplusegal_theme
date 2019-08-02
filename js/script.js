@@ -28,6 +28,7 @@ function resizeBar() {
     }
 }
 resizeBar();
+window.addEventListener('onload', resizeBar);
 window.addEventListener('resize', resizeBar);
 
 
@@ -38,4 +39,3 @@ arrow.addEventListener('click', function(event) {
     arrow.classList.toggle('rotate');
     left.classList.toggle('flex');
 });
-console.log(arrow);

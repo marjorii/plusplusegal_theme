@@ -25,9 +25,19 @@ section {
         }
         ul:first-of-type {
             padding-bottom: 20px;
+            li:first-of-type a::before {
+                content: "";
+                margin-left: 15px;
+            }
+            li:not(:first-of-type) a::before {
+                content: "+ ";
+            }
         }
         ul:last-of-type {
             padding-bottom: 40px;
+            li a::before {
+                content: "+ ";
+            }
         }
         ul, li, p {
             margin: 0;
@@ -35,6 +45,9 @@ section {
         li, a, p, #categories li {
             font-size: 0.9rem;
             line-height: 1.5
+        }
+        li, a {
+            white-space: nowrap;
         }
         a {
             text-decoration: none;
@@ -75,6 +88,7 @@ section {
         div#buttons {
             position: absolute;
             right: 20px;
+            z-index: 1000;
             a {
                 color: black;
                 font-size: 0.9rem;
@@ -113,12 +127,12 @@ section {
 
 
 @media (min-width: 1024px) and (orientation: portrait) {
-    section.left h1, section.right h1 {
+    section.left h1 {
         font-size: 1.5rem !important;
     }
 }
 @media (max-width: 1024px) {
-    section.left h1, section.right h1 {
+    section.left h1 {
         font-size: 0.9rem;
     }
 }

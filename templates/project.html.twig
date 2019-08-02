@@ -1,0 +1,89 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block page %}
+<div class="container">
+    <section class="left">
+        <h1>Plus Plus Égal</h1>
+        <ul>
+            {% set nav = pages.find('/nav') %}
+            {% for member in nav.header.member %}
+            {% for info in member.founders %}
+            {% for tag in page.header.taxonomy.tag %}
+            {% if info.name == tag %}
+            <li><a href="{{ info.url }}" target="_blank">{{ info.name }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for member in nav.header.member %}
+            {% for info in member.guests %}
+            {% for tag in page.header.taxonomy.tag %}
+            {% if info.name == tag %}
+            <li>{% if info.url %}<a href="{{ info.url }}" target="_blank">{{ info.name }}</a>{% else %}<a>{{ info.name }}</a>{% endif %}</li>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+            {% endfor %}
+        </ul>
+        <ul id="filters">
+            <li><input type="button" value="Images"></li>
+            <li><input type="button" value="Texte"></li>
+            {% if header.link %}
+            {% for link in header.link %}
+            <li><a href="{{ link.url }}" target="_blank"><input type="button" value="Lien"></a></li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+    </section>
+    <section class="right">
+        <div id="buttons">
+            <a href="#"><</a>&nbsp;&nbsp;<a href="#">FR</a>&nbsp;<a href="#">EN</a>
+        </div>
+        <div id="grid-container">
+            {% for img in media.images %}
+                {% if img.height > img.width %}
+                    <div class="portrait">
+                {% else %}
+                    <div>
+                {% endif %}
+                {% if loop.index == 1 %}
+                        {{ img }}
+                        <h2>{{ page.title }}</h2>
+                    </div>
+                {% elseif loop.index == 2 %}
+                        {{ img }}
+                        <div class="text top">
+                            <div class="text-column">
+                                {{ content }}
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                        {{ img }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% for video in media.videos %}
+                <div>
+                    {{ video }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="menu-bar">
+                <a href="projects.html">Projets</a>
+                <a href="about.html">À propos</a>
+                <a href="links.html">Liens</a>
+                <a href="#">Contact</a>
+        </div>
+        <div id="back">
+            <a href="/projects">⟵</a>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+{% do assets.addJs('theme://js/script.js') %}
+{% do assets.addJs('theme://js/project.js') %}
+{% endblock %}
