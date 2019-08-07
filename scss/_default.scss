@@ -127,6 +127,35 @@ section {
                 white-space: nowrap;
             }
         }
+        #mail-address {
+            display: none;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            right: 0;
+            z-index: 1001;
+        }
+        #mail-address p {
+            margin: 0;
+            padding: 10px;
+            padding: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            /* color: blue; */
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            span:first-of-type {
+                &::after {
+                    content: "@"
+                }
+            }
+            span:last-of-type {
+                &::after {
+                    content: ".com"
+                }
+            }
+        }
     }
 }
 
@@ -179,6 +208,9 @@ section {
         padding-top: 20px;
     }
     .menu-bar {
+        width: 100% !important;
+    }
+    section.right #mail-address {
         width: 100% !important;
     }
 }
@@ -235,6 +267,12 @@ section {
     }
 }
 
+@media (max-width: 800px) {
+    section.right #mail-address p {
+        font-size: 1.5rem;
+    }
+}
+
 @media (min-width: 1024px) and (orientation: portrait) {
     section.left h1 {
         font-size: 1.5rem;
@@ -245,10 +283,18 @@ section {
     section.right div#buttons {
             right: 40px;
     }
+    section.right #mail-address {
+        width: 50vh !important;
+        padding-right: 40px;
+    }
 }
 
 @media (min-width: 1024px) {
     section.right div#buttons {
             right: 40px;
     }
+}
+
+.show {
+    display: flex !important    ;
 }

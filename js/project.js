@@ -2,18 +2,25 @@ var text = document.querySelector('.text');
 
 // allow click on filters
 document.querySelector('#filters li:first-of-type input').addEventListener('click', function(e) {
-    text.classList.add('end');
+    document.querySelectorAll('img').forEach(function(img) {
+        img.classList.add('top');
+    });
     text.classList.remove('top');
 });
 document.querySelector('#filters li:nth-child(2) input').addEventListener('click', function(e) {
+    document.querySelectorAll('img').forEach(function(img) {
+        img.classList.remove('top');
+    });
     text.classList.add('top');
-    text.classList.remove('end');
 });
 
 // move filters if portrait phones
-if (window.matchMedia("(max-width: 600px) and (orientation: portrait)").matches) {
-    document.querySelector('section.right').appendChild(document.getElementById('filters'));
+function moveFilters() {
+    if (window.matchMedia("(max-width: 600px) and (orientation: portrait)").matches) {
+        document.querySelector('section.right').appendChild(document.getElementById('filters'));
+    }
 }
+moveFilters();
 
 //text resize
 function resizeText() {
@@ -21,5 +28,13 @@ function resizeText() {
     text.style.cssText = 'height: ' + currentHeight;
 }
 resizeText();
-window.addEventListener('onload', resizeText);
-window.addEventListener('resize', resizeText);
+
+// do on resize
+window.onload = function() {
+    resizeText();
+    moveFilters();
+}
+window.onresize = function() {
+    resizeText();
+    moveFilters();
+}

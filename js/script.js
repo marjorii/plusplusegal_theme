@@ -1,18 +1,19 @@
 // resize menu bar (and mail address div)
+
 function resizeBar() {
     var bar = document.querySelector('.menu-bar');
-    // var mail = document.getElementById('mail-address');
+    var mail = document.getElementById('mail-address');
     var currentWidth = document.querySelector('section.right').offsetWidth;
     var finalWidth = currentWidth - 20;
     var portraitTablet = window.matchMedia("(min-width: 768px) and (max-height: 1366px) and (orientation: portrait)").matches;
     var isPortraitTablet = false;
     bar.style.cssText = 'width: ' + finalWidth + 'px';
-    // mail.style.cssText = 'width: ' + finalWidth + 'px';
+    mail.style.cssText = 'width: ' + finalWidth + 'px';
     if (window.location.pathname.includes('/projects/project.html') && portraitTablet) {
         isPortraitTablet = true;
         currentWidth = document.querySelector('#grid-container > div:last-of-type').offsetWidth;
         bar.style.cssText = 'width: ' + currentWidth + 'px';
-        // mail.style.cssText = 'width: ' + currentWidth + 'px';
+        mail.style.cssText = 'width: ' + currentWidth + 'px';
     }
     else {
         isPortraitTablet = false;
@@ -38,4 +39,9 @@ var arrow = document.querySelector('div#buttons a:first-of-type');
 arrow.addEventListener('click', function(event) {
     arrow.classList.toggle('rotate');
     left.classList.toggle('flex');
+});
+
+// show mail address
+document.querySelector('.menu-bar a:last-of-type').addEventListener('click', function(event) {
+    document.getElementById('mail-address').classList.toggle('show');
 });

@@ -61,7 +61,6 @@
             }
             img {
                 width: 75vh;
-                z-index: 1;
             }
             .portrait {
                 img {
@@ -312,12 +311,8 @@
             }
         }
     }
-
-
     .top {
-        z-index: 999;
-    }
-    .end {
-        z-index: -1;
+        z-index: 2;
+        position: relative;
     }
 }
