@@ -41,6 +41,7 @@
         <div id="buttons">
             <a href="#"><</a>&nbsp;&nbsp;<a href="#">FR</a>&nbsp;<a href="#">EN</a>
         </div>
+        {% block main %}
         <div id="grid-container">
             {% for img in media.images %}
                 {% if img.height > img.width %}
@@ -71,10 +72,11 @@
                 </div>
             {% endfor %}
         </div>
+        {% endblock %}
         <div class="menu-bar">
-                <a href="projects.html">Projets</a>
-                <a href="about.html">À propos</a>
-                <a href="links.html">Liens</a>
+                <a href="/projects">Projets</a>
+                <a href="/about">À propos</a>
+                <a href="/links">Liens</a>
                 <a href="#">Contact</a>
         </div>
         <div id="back">

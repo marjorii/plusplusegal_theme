@@ -1,10 +1,4 @@
 .project {
-    .top {
-        z-index: 1000;
-    }
-    .end {
-        z-index: -1;
-    }
     section.left {
         height: auto;
         width: auto;
@@ -44,19 +38,26 @@
         overflow-y: hidden;
         width: 100% !important;
         padding: 40px 0 40px 0;
-        z-index: -2;
+        div#buttons {
+            direction: ltr;
+        }
         #grid-container {
             direction: ltr;
             display: flex;
             overflow-x: scroll;
             overflow-y: hidden;
-            height: calc(100% - 95px);
+            height: calc(100% - 40px);
             & > div:first-of-type {
                 padding-left: 30vh;
             }
             & > div {
                 padding-right: 6vh;
                 position: relative;
+            }
+            h2 {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                padding-top: 20px;
             }
             img {
                 width: 75vh;
@@ -78,7 +79,7 @@
                 column-fill: auto;
                 column-gap: 6vh;
                 top: 0;
-                padding-left: 0 !important;
+                padding-left: 0;
                 /* margin-top: 20px; */
                 .text-column {
                     width: 75vh;
@@ -98,7 +99,7 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            z-index: 999;
+            z-index: 1000;
             padding: 20px 40px;
         }
         #back a {
@@ -111,72 +112,16 @@
     }
 
 
-    @media (max-width: 1024px) {
-        section.left h1 {
-            padding-bottom: 20px !important;
-        }
-        #filters {
-            padding-top: 20px;
-        }
-        #grid-container .text-column p {
-            font-size: 0.9rem !important;
-        }
-    }
-    @media (max-width: 1280px) {
-        section.right h2 {
-            font-size: 0.75rem !important;
-        }
-    }
-    @media (min-height: 768px) and (max-width: 1280px) and (orientation: landscape) {
-        #grid-container {
-            height: calc(100% - 75px) !important;
-        }
-        .menu-bar {
-            height: 65px;
-        }
-    }
-    // @media (orientation: portrait) {
-    //     #grid-container .text {
-    //         column-width: 50vh !important;
-    //         margin: 0;
-    //         .text-column {
-    //             width: 50vh !important;
-    //             direction: ltr;
-    //             p {
-    //                 padding: 0;
-    //             }
-    //         }
-    //     }
-    // }
-    @media (min-height: 768px) and (max-width: 1280px) and (orientation: portrait) {
+    @media (orientation: portrait) {
         section.right {
-            padding: 0;
-        }
-        #buttons {
-            padding-top: 40px;
-        }
-        #grid-container {
-            justify-content: flex-start;
-            flex-direction: column;
-            overflow-x: hidden !important;
-            overflow-y: scroll !important;
-            direction: rtl !important;
-            & > div {
-                padding: 40px 40px 1vh 0;
+            div#buttons {
+                direction: rtl;
             }
-            & > div:last-of-type {
-                padding-bottom: 80px;
-            }
-            img, video {
-                width: 50vh !important;
-            }
-            .text {
-                column-width: 50vh !important;
+            #grid-container .text {
+                column-width: auto;
                 margin: 0;
-                padding-top: 40px;
-                padding-left: 0 !important;
                 .text-column {
-                    width: 50vh !important;
+                    width: auto;
                     direction: ltr;
                     p {
                         padding: 0;
@@ -184,13 +129,12 @@
                 }
             }
         }
-        .menu-bar {
-            right: 20px;
-        }
     }
+
     @media (max-width: 600px) and (orientation: portrait) {
         .container {
             width: calc(100% - 40px);
+            padding-right: 0;
         }
         section {
             padding: 0;
@@ -205,37 +149,37 @@
         }
         section.right {
             padding: 0;
-        }
-        #buttons {
-            padding-top: 20px;
-        }
-        #grid-container {
-            justify-content: flex-start;
-            flex-direction: column;
-            overflow-x: hidden;
-            overflow-y: scroll;
-            direction: rtl;
-            div:first-of-type {
-                /* padding-top: 40px; */
-                padding-top: 80px;
-                padding-left: 0;
+            #buttons {
+                padding-top: 20px;
             }
-            & > div {
-                padding-right: 0 !important;
-                padding-bottom: 6vh;
-                padding-left: 40px !important;
-            }
-            img {
-                width: 100%;
-            }
-            .text {
-                padding-left: 40px !important;
+            #grid-container {
+                justify-content: flex-start;
+                flex-direction: column;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                direction: rtl;
+                & > div:first-of-type {
+                    /* padding-top: 40px; */
+                    padding-top: 80px;
+                }
+                & > div, & > div.portrait, & > div:first-of-type {
+                    padding-right: 0;
+                    padding-bottom: 6vh;
+                    padding-left: 40px;
+                }
+                img, .portrait img, video {
+                    width: 100%;
+                }
+                .text {
+                    padding-left: 40px;
+                }
             }
         }
         section.right h2 {
             line-height: 1.5;
             padding-top: 10px;
             margin-bottom: 0;
+            direction: ltr;
         }
         #filters {
             position: absolute;
@@ -247,42 +191,48 @@
             padding: 20px 0 0 40px;
             list-style: none;
             z-index: 999;
+            direction: ltr;
+            a {
+                text-decoration: none;
+            }
         }
         #back {
             display: none;
         }
     }
+
     @media (max-height: 600px) and (orientation: landscape) {
-        section.left h1 {
-            padding-bottom: 0 !important;
-        }
-        #filters {
-            padding-top: 40px;
+        section.left #filters {
+            padding-top: 20px;
         }
         section.right {
             padding-top: 20px;
-        }
-        #grid-container {
-            height: calc(100% - 25px);
-            & > div:first-of-type {
-                padding-left: 50vh;
+            div#buttons {
+                right: 20px;
             }
-            img {
-                width: 35vh;
-            }
-            section.right h2 {
-                padding-top: 0;
-                margin-top: 5px;
-            }
-            .text {
-                margin: 0;
-                padding: 0;
-                column-width: 35vh;
-                .text-column {
+            #grid-container {
+                height: calc(100% - 10px);
+                & > div:first-of-type {
+                    padding-left: 50vh;
+                }
+                img, .portrait img, video {
                     width: 35vh;
-                    p {
-                        padding: 0;
-                        font-size: 0.75rem;
+                }
+                h2 {
+                    padding-top: 0;
+                    margin-top: 5px;
+                    font-size: 0.75rem;
+                }
+                .text {
+                    margin: 0;
+                    padding: 0;
+                    column-width: 35vh;
+                    .text-column {
+                        width: 35vh;
+                        p {
+                            padding: 0;
+                            font-size: 0.75rem !important;
+                        }
                     }
                 }
             }
@@ -294,5 +244,80 @@
         #back {
             padding-bottom: 10px;
         }
+    }
+
+    @media (max-width: 1024px) {
+        #filters {
+            padding-top: 20px;
+        }
+        section.right #grid-container .text .text-column p {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (min-height: 768px) and (max-width: 1280px) and (orientation: portrait) {
+        section.right {
+            padding: 0;
+            #buttons {
+                padding-top: 40px;
+                right: 20px;
+            }
+            #grid-container {
+                justify-content: flex-start;
+                flex-direction: column;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                direction: rtl;
+                & > div, & div.portrait {
+                    padding: 40px 40px 1vh 0;
+                }
+                & > div:last-of-type {
+                    padding-bottom: 80px;
+                }
+                h2 {
+                    direction: ltr;
+                    width: 50vh;
+                }
+                img, video {
+                    width: 50vh;
+                }
+                .text {
+                    column-width: 50vh;
+                    margin: 0;
+                    padding-top: 40px;
+                    padding-left: 0;
+                    .text-column {
+                        width: 50vh;
+                        direction: ltr;
+                        p {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+            .menu-bar {
+                width: 50vh !important;
+                right: 40px;
+            }
+        }
+    }
+
+    @media (min-height: 768px) and (max-width: 1280px) and (orientation: landscape) {
+        section.right {
+            #grid-container {
+                height: calc(100% - 25px);
+            }
+            .menu-bar {
+                height: 65px;
+            }
+        }
+    }
+
+
+    .top {
+        z-index: 999;
+    }
+    .end {
+        z-index: -1;
     }
 }
