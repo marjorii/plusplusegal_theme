@@ -1,1 +1,126 @@
- 
+.about {
+    section.left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &.flex {
+            display: flex;
+        }
+        span.main {
+            display: none;
+        }
+        #logo {
+            display: none;
+        }
+        #image {
+            display: flex;
+            flex-direction: column;
+            img {
+                width: 100%;
+                padding-bottom: 10px;
+            }
+            p {
+                display: block;
+                font-size: 0.75rem;
+                padding-bottom: 0;
+                text-align: center;
+            }
+        }
+    }
+    section.right {
+        main {
+            padding: 40px 40px 80px 40px;
+            p {
+                font-size: 1.5rem;
+                line-height: 1.5;
+                &::before {
+                    content: "";
+                    margin-left: 6rem;
+                }
+            }
+            p:not(:last-of-type) {
+                padding-bottom: 40px;
+            }
+        }
+    }
+
+
+    @media (orientation: portrait) {
+        section.right {
+            main {
+                padding: 40px 0 80px 0;
+            }
+        }
+    }
+
+
+    @media (max-width: 600px), (max-height: 600px) {
+        section.right main p::before {
+            margin-left: 3rem;
+        }
+    }
+
+
+    @media (max-width: 600px) and (orientation: portrait) {
+        .container {
+            padding-right: 40px;
+        }
+        section {
+            &.left {
+                display: none;
+                direction: rtl;
+                & > div {
+                    direction: ltr;
+                    width: 100%;
+                }
+                #image {
+                    padding: 0 40px 40px 40px;
+                }
+            }
+        }
+    }
+
+
+    @media (max-height: 600px) and (orientation: landscape) {
+        section.left {
+            #image {
+                padding-bottom: 40px;
+            }
+        }
+        section.right {
+            main {
+                padding: 0 20px 40px 20px;
+            }
+        }
+    }
+
+
+    @media (max-width: 1024px) {
+        section.right {
+            main {
+                p {
+                    font-size: 0.9rem;
+                }
+                p:not(:last-of-type) {
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+
+
+    @media (min-width:768px) and (max-width: 1280px) and (orientation: landscape) {
+        section.right main {
+            padding-top: 0;
+        }
+    }
+
+
+    .rainbow {
+        background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+        background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+        color:transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+}

@@ -19,10 +19,17 @@
             {% endfor %}
             {% endfor %}
         </ul>
-        {{ nav.content }}
+        <span class="main">{{ nav.content }}</span>
+        <span class="alternate"><p>{{ nav.header.alternate }}</p></span>
         <div id="logo">
             <img src="{{ url('theme://images/++=.png') }}"/>
             <p>Plus Plus Égal 2019</p>
+        </div>
+        <div id="image">
+            {% for img in nav.media.images %}
+                {{ img }}
+            {% endfor %}
+            <p>{{ nav.header.credit }}</p>
         </div>
     </section>
     <section class="right">

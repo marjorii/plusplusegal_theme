@@ -63,6 +63,9 @@ section {
         p:last-of-type {
             padding-bottom: 40px;
         }
+        .alternate {
+            display: none;
+        }
         #logo {
             position: absolute;
             bottom: 40px;
@@ -79,6 +82,9 @@ section {
             padding: 0;
             font-size: 0.75rem;
         }
+        #image {
+            display: none;
+        }
     }
     &.right {
         width: 80%;
@@ -87,7 +93,7 @@ section {
         div#buttons {
             position: absolute;
             right: 20px;
-            z-index: 1000;
+            z-index: 1001;
             a {
                 color: black;
                 font-size: 0.9rem;
@@ -175,7 +181,7 @@ section {
             position: absolute;
             flex-direction: column;
             align-items: flex-start;
-            z-index: 1;
+            z-index: 1001;
             p:not(:last-of-type) {
                 padding-bottom: 20px;
             }

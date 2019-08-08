@@ -1,7 +1,12 @@
 {% extends 'default.html.twig' %}
 
 {% block main %}
-<main>
-{{ page.content }}
-</main>
-{% endblock %} 
+    <main>
+        {{ page.content }}
+    </main>
+{% endblock %}
+
+{% block javascripts %}
+{% do assets.addJs('theme://js/script.js') %}
+{% do assets.addJs('theme://js/about.js') %}
+{% endblock %}

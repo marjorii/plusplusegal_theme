@@ -29,12 +29,23 @@ function resizeText() {
 }
 resizeText();
 
+//specific
+function resizeT() {
+    if (window.location.href.includes('/projects/cache-cache') && window.matchMedia("(min-width: 1024px)").matches)  {
+        text.classList.add('small');
+        document.querySelector('.text-column').classList.add('small')
+    }
+}
+resizeT();
+
 // do on resize
 window.onload = function() {
     resizeText();
+    resizeT();
     moveFilters();
 }
 window.onresize = function() {
     resizeText();
+    resizeT();
     moveFilters();
 }

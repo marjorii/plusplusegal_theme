@@ -1,1 +1,13 @@
- 
+.links {
+    section.left {
+        span.main {
+            display: none;
+        }
+        span.alternate {
+            display: block;
+            p {
+                line-height: 1.5;
+            }
+        }
+    }
+}
