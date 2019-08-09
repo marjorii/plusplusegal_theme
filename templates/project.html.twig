@@ -38,12 +38,7 @@
         </ul>
     </section>
     <section class="right">
-        <div id="mail-address">
-            <p><span>hello</span><span>plusplusegal</span></p>
-        </div>
-        <div id="buttons">
-            <a href="#"><</a>&nbsp;&nbsp;<a href="#">FR</a>&nbsp;<a href="#">EN</a>
-        </div>
+        {% include 'partials/lang.html.twig' %}
         {% block main %}
         <div id="grid-container">
             {% for img in media.images %}
@@ -76,12 +71,7 @@
             {% endfor %}
         </div>
         {% endblock %}
-        <div class="menu-bar">
-                <a href="/projects">Projets</a>
-                <a href="/about">À propos</a>
-                <a href="/links">Liens</a>
-                <a href="#">Contact</a>
-        </div>
+        {% include 'partials/menu.html.twig' %}
         <div id="back">
             <a href="/projects">⟵</a>
         </div>

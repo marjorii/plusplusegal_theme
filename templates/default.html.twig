@@ -33,25 +33,13 @@
         </div>
     </section>
     <section class="right">
-        <div id="mail-address">
-            <p><span>hello</span><span>plusplusegal</span></p>
-        </div>
-        <div id="buttons">
-            <a href="#"><</a>
-            <a href="#">FR</a>
-            <a href="#">EN</a>
-        </div>
+        {% include 'partials/lang.html.twig' %}
         {% block main %}
         <main>
             {{ page.content }}
         </main>
         {% endblock %}
-        <div class="menu-bar">
-            <a href="projects.html">Projets</a>
-            <a href="about.html">À propos</a>
-            <a href="links.html">Liens</a>
-            <a href="#">Contact</a>
-        </div>
+        {% include 'partials/menu.html.twig' %}
     </section>
 </div>
 {% endblock %}

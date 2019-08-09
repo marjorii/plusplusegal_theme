@@ -1,0 +1,9 @@
+<div id="mail-address">
+    <p><span>hello</span><span>plusplusegal</span></p>
+</div>
+<div id="buttons">
+    <a href="#"><</a>
+    {% set alt_locale = grav.language.getActive ? 'en' : 'fr' %}
+    <a href="{{ alt_locale == 'fr' ? page.url : '/' ~ page.url[4:] }}">FR</a>
+    <a href="{{ alt_locale == 'en' ? page.url : '/en' ~ page.url }}">EN</a>
+</div>

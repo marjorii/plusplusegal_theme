@@ -1,0 +1,6 @@
+<div class="menu-bar">
+    {% for page in pages.children.visible %}
+        <a href="{{ page.url }}">{{ page.title }}</a>
+    {% endfor %}
+    <a href="#">Contact</a>
+</div>
