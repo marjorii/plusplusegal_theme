@@ -2,6 +2,44 @@
 
 {% block main %}
 <main>
-{{ page.content }}
+    {% set links = pages.find('/links') %}
+    <div id="links-container">
+        <div>
+            <div>
+                <h1>Amis</h1>
+                <ul>
+                    {% for friend in links.header.friends %}
+                    <li><a href="{{ friend.url }}" target="_blank">{{ friend.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h1>Références</h1>
+                <ul>
+                    {% for ref in links.header.ref %}
+                    <li><a href="{{ friend.url }}" target="_blank">{{ ref.name }}</a></li>
+                    {% endfor %}
+                </ul>
+                <h1>Expositions</h1>
+                <ul>
+                    {% for expo in links.header.expo %}
+                    <li><p>{{ expo.name }}</p></li>
+                    {% endfor %}
+                </ul>
+                <h1>Publications</h1>
+                <ul>
+                    {% for pub in links.header.pub %}
+                    <li><p>{{ pub.name }}</p></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 </main>
+{% endblock %}
+
+{% block javascripts %}
+{% do assets.addJs('theme://js/script.js') %}
 {% endblock %}

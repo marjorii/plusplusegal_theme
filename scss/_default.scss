@@ -268,7 +268,7 @@ section {
 }
 
 @media (max-width: 1024px) {
-    section.left h1 {
+    section.left h1, section.right h1 {
         font-size: 0.9rem;
     }
 }

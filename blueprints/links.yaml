@@ -1,0 +1,52 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.friends:
+              type: list
+              style: vertical
+              label: Amis
+              fields:
+                .name:
+                  type: text
+                  style: vertical
+                  label: Nom
+                .url:
+                  type: text
+                  style: vertical
+                  label: URL
+            header.ref:
+              type: list
+              style: vertical
+              label: Références
+              fields:
+                .name:
+                  type: text
+                  style: vertical
+                  label: Nom
+                .url:
+                  type: text
+                  style: vertical
+                  label: URL
+            header.expo:
+              type: list
+              style: vertical
+              label: Expositions
+              fields:
+                .name:
+                  type: text
+                  style: vertical
+                  label: Nom
+            header.pub:
+              type: list
+              style: vertical
+              label: Publications
+              fields:
+                .name:
+                  type: text
+                  style: vertical
+                  label: Nom
