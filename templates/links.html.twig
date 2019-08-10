@@ -6,7 +6,7 @@
     <div id="links-container">
         <div>
             <div>
-                <h1>Amis</h1>
+                <h1>{{ "LINKS.FRIENDS"|t }}</h1>
                 <ul>
                     {% for friend in links.header.friends %}
                     <li><a href="{{ friend.url }}" target="_blank">{{ friend.name }}</a></li>
@@ -16,7 +16,7 @@
         </div>
         <div>
             <div>
-                <h1>Références</h1>
+                <h1>{{ "LINKS.REF"|t }}</h1>
                 <ul>
                     {% for ref in links.header.ref %}
                     <li><a href="{{ friend.url }}" target="_blank">{{ ref.name }}</a></li>

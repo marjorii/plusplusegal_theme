@@ -1,38 +1,9 @@
 fr:
-    MONTHS: [janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre]
-    MENU_LEFT:
-      GRAPHIC_DESIGN: Design graphique
-      BOOK_DESIGN: Édition
-      RESEARCH: Recherches
-
-    ABOUT:
-      SEE_ALSO: À découvrir
-      LICENSES: Licences
-
-    PROJECT:
-      MENU_TXT: Texte
-      MENU_LKS: Liens
-      PREV: < Projet précédent
-      NEXT: Projet suivant >
+    LINKS:
+      FRIENDS: Amis
+      REF: Références
 
 en:
-    MENU_LEFT:
-      GRAPHIC_DESIGN: Graphic design
-      BOOK_DESIGN: Book design
-      RESEARCH: Research
-
-    MENU_RIGHT:
-      MASTER_THESIS: Master thesis
-
-    MENU_BOTTOM:
-      PROJ: Projects 2019 — 2015.
-
-    ABOUT:
-      SEE_ALSO: See also
-      LICENSES: Licenses
-
-    PROJECT:
-      MENU_TXT: Text
-      MENU_LKS: Links
-      PREV: Previous project
-      NEXT: Next project >
+    LINKS:
+      FRIENDS: Friends
+      REF: References
