@@ -4,6 +4,6 @@
 <div id="buttons">
     <a href="#"><</a>
     {% set alt_locale = grav.language.getActive ? 'en' : 'fr' %}
-    <a href="{{ alt_locale == 'fr' ? page.url : '/' ~ page.url[4:] }}">FR</a>
-    <a href="{{ alt_locale == 'en' ? page.url : '/en' ~ page.url }}">EN</a>
+    <a href="{{ alt_locale == 'fr' ? page.url : '/' ~ page.url[4:] }}" {% if alt_locale == 'fr' %}class="selected" aria-current="page"{% endif %}>FR</a>
+    <a href="{{ alt_locale == 'en' ? page.url : '/en' ~ page.url }}" {% if alt_locale == 'en' %}class="selected" aria-current="page"{% endif %}>EN</a>
 </div>

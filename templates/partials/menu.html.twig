@@ -1,6 +1,6 @@
 <div class="menu-bar">
     {% for page in pages.children.visible %}
-        <a href="{{ page.url }}">{{ page.title }}</a>
+        <a href="{{ page.url }}" {% if page.active or page.activeChild %}class="selected" aria-current="page"{% endif %}>{{ page.title }}</a>
     {% endfor %}
     <a href="#">Contact</a>
 </div>

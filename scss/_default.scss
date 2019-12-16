@@ -97,7 +97,11 @@ section {
             a {
                 color: black;
                 font-size: 0.9rem;
+                text-decoration: none;
                 background-color: white;
+                &.selected {
+                    text-decoration: underline;
+                }
                 &:first-of-type {
                     display: none;
                     transform: rotate(90deg);
@@ -127,10 +131,16 @@ section {
             z-index: 1000;
             a {
                 color: black;
-                text-decoration: underline;
+                text-decoration: none;
                 font-size: 0.9rem;
                 padding: 15px;
                 white-space: nowrap;
+                &.selected {
+                    text-decoration: underline;
+                }
+                &:last-of-type {
+                    text-decoration: none;
+                }
             }
         }
         #mail-address {
