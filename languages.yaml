@@ -2,8 +2,16 @@ fr:
     LINKS:
       FRIENDS: Amis
       REF: Références
+    CATEGORY:
+      WORK: Commandes
+      RESEARCH: Recherche
+      ARCHIVES: Archives
 
 en:
     LINKS:
       FRIENDS: Friends
       REF: References
+    CATEGORY:
+      WORK: Commissioned work
+      RESEARCH: Research
+      ARCHIVES: Archives

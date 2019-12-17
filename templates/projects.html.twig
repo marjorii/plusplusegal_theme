@@ -1,32 +1,36 @@
 {% extends 'default.html.twig' %}
 
+{% macro list(page, collectionName) %}
+<div class="category">
+    <h1>{{ ("CATEGORY." ~ collectionName|upper)|t }}</h1>
+</div>
+<div id="grid-container">
+    {% for item in page.collection(collectionName) %}
+            {% for img in item.media.images %}
+                {% if loop.index == 1 %}
+                    <div>
+                        <a href="{{ item.url }}">{{ img }}</a>
+                        <h2>{{ item.title }}</h2>
+                    </div>
+                {% else %}
+                    <div>
+                        <a href="{{ item.url }}">{{ img }}</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% for animated in item.media.files %}
+                <div>
+                    <a href="{{ item.url }}">{{ animated }}</a>
+                </div>
+            {% endfor %}
+    {% endfor %}
+</div>
+{% endmacro %}
+
 {% block main %}
 <main>
-    {% for cat in taxonomy.getTaxonomyItemKeys('category') %}
-        <div class="category">
-            <h1>{{ cat }}</h1>
-        </div>
-        <div id="grid-container">
-            {% for item in taxonomy.findTaxonomy({'category': cat }) %}
-                    {% for img in item.media.images %}
-                        {% if loop.index == 1 %}
-                            <div>
-                                <a href="{{ item.url }}">{{ img }}</a>
-                                <h2>{{ item.title }}</h2>
-                            </div>
-                        {% else %}
-                            <div>
-                                <a href="{{ item.url }}">{{ img }}</a>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                    {% for animated in item.media.files %}
-                        <div>
-                            <a href="{{ item.url }}">{{ animated }}</a>
-                        </div>
-                    {% endfor %}
-            {% endfor %}
-        </div>
-    {% endfor %}
+{{ _self.list(page, 'work') }}
+{{ _self.list(page, 'research') }}
+{{ _self.list(page, 'archives') }}
 </main>
 {% endblock %}
