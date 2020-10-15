@@ -131,7 +131,15 @@
         }
     }
 
-    @media (max-width: 600px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
+        section.right #grid-container {
+            img, .portrait img, video {
+            width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 767px) and (orientation: portrait) {
         .container {
             width: calc(100% - 40px);
             padding-right: 0;
@@ -167,9 +175,6 @@
                     padding-bottom: 6vh;
                     padding-left: 40px;
                 }
-                img, .portrait img, video {
-                    width: 100%;
-                }
                 .text {
                     padding-left: 40px;
                 }
@@ -201,7 +206,7 @@
         }
     }
 
-    @media (max-height: 600px) and (orientation: landscape) {
+    @media (max-height: 767px) and (orientation: landscape) {
         section.left #filters {
             padding-top: 20px;
         }
@@ -255,7 +260,7 @@
         }
     }
 
-    @media (min-height: 768px) and (max-width: 1280px) and (orientation: portrait) {
+    @media (min-height: 768px) and (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
         section.right {
             padding: 0;
             #buttons {
